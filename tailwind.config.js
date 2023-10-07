@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         poppins: ["poppins", "sans-serif"],
       },
+      backgound: {
+        pricing: 'url(./src/assets/pricingApp/bg-pattern.svg)'
+      }
     },
   },
   plugins: [],

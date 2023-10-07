@@ -2,8 +2,11 @@ import { useState } from "react";
 
 export function useAgeCalculatorLogic() {
   const [values, setValues] = useState({ day: "", month: "", year: "" });
+  const [touched, setTouched] = useState({});
 
-  const hasError = Object.values().some((value) => !value);
+  const hasError =
+    Object.values(values).some((value) => !value) ||
+    !!errorMessage({ name: "year", touched: { year: true }, values });
 
   function handleChange(event) {
     const { value, name } = event.target;

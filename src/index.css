@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400i;700;800i&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 :root {
-  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  -webkit-text-size-adjust: 100%;
+  font-family: Poppins, system-ui;
   /* background: #716f6f "smokey grey"; */
   /* background: #141414 "off black"; */
   /* background: #f0f0f0 ; off white*/
@@ -17,10 +14,9 @@
 }
 
 body {
+  /* color: ; */
   margin: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
