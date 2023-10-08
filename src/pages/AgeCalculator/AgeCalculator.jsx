@@ -24,21 +24,21 @@ function AgeCalculator() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (day < 1 || day > 31) {
-      setDayErrorText("Must be a valid day");
-      setDayError(true);
-    } else if (day === "") {
+    if (day == "") {
       setDayErrorText("This field is required");
+      setDayError(true);
+    } else if (day < 1 || day > 31 || isNaN(parseInt(day))) {
+      setDayErrorText("Must be a valid day");
       setDayError(true);
     } else {
       setDayError(false);
       setDayErrorText("");
     }
-    if (month < 1 || month > 12) {
-      setMonthErrorText("Must be a valid month");
-      setMonthError(true);
-    } else if (month === "") {
+    if (month == "") {
       setMonthErrorText("This field is required");
+      setMonthError(true);
+    } else if (month < 1 || month > 12 || isNaN(parseInt(month))) {
+      setMonthErrorText("Must be a valid month");
       setMonthError(true);
     } else {
       setMonthError(false);
@@ -50,21 +50,25 @@ function AgeCalculator() {
     } else if (year === "") {
       setYearErrorText("This field is required");
       setYearError(true);
+    } else if (isNaN(parseInt(year))) {
+      setYearError(true);
+      setYearErrorText("Must be a valid year");
+    } else if (year.length < 4) {
+      setYearError(true);
+      setYearErrorText("Must be at least 1970");
+      return;
     } else {
       setYearError(false);
       setYearErrorText("");
     }
 
-    if (
-      typeof parseInt(month) !== "number" ||
-      typeof parseInt(day) !== "number" ||
-      typeof parseInt(year) !== "number"
-    )
-      return;
-
     let date1 = new Date(`${year}-${month}-${day}`);
     let today = new Date();
-    if (date1 == "Invalid Date" || date1 > today) {
+    if (date1 > today && today.getFullYear() == date1.getFullYear()) {
+      setDayError(true);
+      setMonthError(true);
+      setDayErrorText("Must be in the past");
+      setMonthErrorText("Must be in the past");
       return;
     }
 
@@ -91,7 +95,11 @@ function AgeCalculator() {
     <>
       <div className="bg-[#dbdbdb] p-4 md:p-0 flex flex-col justify-center h-screen max-w-[1440px] mx-auto">
         <div className="w-full md:w-3/5 bg-white rounded-br-[9rem] mx-auto relative">
-          <form className="p-5 sm:p-6 md:p-12" action="#" onSubmit={handleSubmit}>
+          <form
+            className="p-5 sm:p-6 md:p-12"
+            action="#"
+            onSubmit={handleSubmit}
+          >
             <div className="flex gap-4 border-b pb-12">
               <div className="flex flex-col gap-2 md:basis-1/4">
                 <label
@@ -108,13 +116,10 @@ function AgeCalculator() {
                   autoFocus
                   placeholder="DD"
                   value={day}
-                  onChange={(e) => {
-                    setDay(e.target.value);
-                    console.log(day);
-                  }}
+                  onChange={(e) => setDay(e.target.value)}
                   className={`w-full text-[1.5rem] md:text-[2rem] font-bold p-3 md:p-4 border ${
                     dayError ? "border-red-500" : ""
-                  } rounded invalid:border-rose-600`}
+                  } rounded focus:border-rose-600`}
                 />
                 <small className="text-[8px] md:text-[10px] text-rose-400">
                   {dayErrorText}
@@ -155,10 +160,7 @@ function AgeCalculator() {
                   type="text"
                   id="year"
                   placeholder="YYYY"
-                  onChange={(e) => {
-                    setYear(e.target.value);
-                    console.log("year: ", year);
-                  }}
+                  onChange={(e) => setYear(e.target.value)}
                   className={`w-full text-[1.5rem] md:text-[2rem] font-bold p-3 md:p-4 border ${
                     yearError ? "border-red-500" : ""
                   } rounded invalid:border-rose-600`}
@@ -170,8 +172,10 @@ function AgeCalculator() {
             </div>
             <button
               type="submit"
-              className={`border-0 bg-purple-700 p-4 rounded-full flex mx-auto -mt-8 md:absolute right-1/2 md:right-12 ${
-                dayError || monthError || yearError ? "top-48" : "top-44"
+              className={`border-0 bg-purple-700 p-4 rounded-full flex mx-auto -mt-8 md:mt-2 md:absolute md:right-12 ${
+                dayError || monthError || yearError
+                  ? "top-40 md:mt-8"
+                  : "top-44"
               } hover:bg-black`}
             >
               <img src={arrow} alt="arrow down" />
@@ -180,18 +184,26 @@ function AgeCalculator() {
           <div className="text-4xl md:text-5xl font-extrabold text-left p-6 md:p-12">
             <h1 className="">
               <span className="text-purple-500">
-                {yearNum ? yearNum : "--"}
+                {yearNum && !dayError && !monthError && !yearError
+                  ? yearNum
+                  : "--"}
               </span>{" "}
               years
             </h1>
             <h1 className="">
               <span className="text-purple-500">
-                {monthNum ? monthNum : "--"}
+                {monthNum && !dayError && !monthError && !yearError
+                  ? monthNum
+                  : "--"}
               </span>{" "}
               months
             </h1>
             <h1 className="">
-              <span className="text-purple-500">{DayNum ? DayNum : "--"}</span>{" "}
+              <span className="text-purple-500">
+                {DayNum && !dayError && !monthError && !yearError
+                  ? DayNum
+                  : "--"}
+              </span>{" "}
               days
             </h1>
           </div>
