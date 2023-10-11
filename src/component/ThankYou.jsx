@@ -4,7 +4,7 @@ export default function ThankYou({ submitted, active }) {
     <div
       className={`${
         submitted
-          ? "flex flex-col w-4/12 gap-6 px-8 py-10 bg-[#252d37] rounded-3xl text-center"
+          ? "flex flex-col w-full sm:w-4/5 md:w-3/5 lg:w-4/12 gap-6 px-8 py-10 bg-[#252d37] rounded-3xl text-center"
           : "hidden"
       } `}
     >
