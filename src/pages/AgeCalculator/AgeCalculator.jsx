@@ -119,7 +119,7 @@ function AgeCalculator() {
                   onChange={(e) => setDay(e.target.value)}
                   className={`w-full text-[1.5rem] md:text-[2rem] font-bold p-3 md:p-4 border ${
                     dayError ? "border-red-500" : ""
-                  } rounded focus:border-rose-600`}
+                  } rounded focus:border focus:border-rose-600`}
                 />
                 <small className="text-[8px] md:text-[10px] text-rose-400">
                   {dayErrorText}

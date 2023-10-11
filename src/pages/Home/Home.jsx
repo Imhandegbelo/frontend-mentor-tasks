@@ -18,6 +18,10 @@ export default function Home() {
       title: "Todo",
       path: "/todo",
     },
+    {
+      title: "TicTac Toe",
+      path: "/tic_tac",
+    },
     
   ];
 
