@@ -6,10 +6,11 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["poppins", "sans-serif"],
+        Overpass: ["Overpass", "sans"],
       },
       backgound: {
-        pricing: 'url(./src/assets/pricingApp/bg-pattern.svg)'
-      }
+        pricing: "url(./src/assets/pricingApp/bg-pattern.svg)",
+      },
     },
   },
   plugins: [],

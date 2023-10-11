@@ -1,5 +1,4 @@
 import iconStar from "../../assets/ratingApp/icon-star.svg";
-
 import { useState } from "react";
 import ThankYou from "../../component/ThankYou";
 
@@ -9,7 +8,7 @@ export default function RatingApp() {
   const stars = [1, 2, 3, 4, 5];
 
   function handleSubmit() {
-    if (active >= 1 ) {
+    if (active >= 1) {
       setSubmitted(true);
     } else {
       alert("You have not made a selection!");
@@ -19,7 +18,7 @@ export default function RatingApp() {
   }
 
   return (
-    <div className="bg-[#121417] h-screen p-4 flex justify-center items-center">
+    <div className="bg-[#121417] h-screen font-Overpass p-4 flex justify-center items-center">
       <div
         className={`${
           submitted
@@ -43,6 +42,7 @@ export default function RatingApp() {
         <div className="flex justify-between">
           {stars.map((star) => (
             <button
+              key={star.toString()}
               onClick={() => setActive(star)}
               className={`items-center w-12 h-12 rounded-full ${
                 active === star
