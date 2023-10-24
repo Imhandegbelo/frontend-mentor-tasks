@@ -4,6 +4,7 @@ import ThankYou from "../../component/ThankYou";
 
 export default function RatingApp() {
   const [active, setActive] = useState(-1);
+  // const [hover, setHover] = useState(-1);
   const [submitted, setSubmitted] = useState(false);
   const stars = [1, 2, 3, 4, 5];
 
@@ -15,6 +16,11 @@ export default function RatingApp() {
       setSubmitted(false);
     }
     console.log("clicked");
+  }
+
+  function reset(){
+    setSubmitted(false)
+    setActive(-1)
   }
 
   return (
@@ -43,12 +49,15 @@ export default function RatingApp() {
           {stars.map((star) => (
             <button
               key={star.toString()}
-              onClick={() => setActive(star)}
+              // onClick={() => setActive(star)}
+              onClick={()=>setActive(star)}
+              
               className={`items-center w-12 h-12 rounded-full ${
-                active === star
-                  ? "bg-gray-400 text-white"
+                active >= star
+                  ? "hover:bg-orange-500 bg-gray-400 text-white "
                   : "bg-gray-700 text-white/50"
-              } hover:bg-orange-500 hover:text-white`}
+              }
+               hover:bg-orange-500 hover:text-white`}
             >
               {star}
             </button>
@@ -63,7 +72,7 @@ export default function RatingApp() {
           </button>
         </div>
       </div>
-      <ThankYou submitted={submitted} active={active} />
+      <ThankYou submitted={submitted} active={active} onclick={reset} />
     </div>
   );
 }

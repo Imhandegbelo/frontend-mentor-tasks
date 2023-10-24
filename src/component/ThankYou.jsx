@@ -1,7 +1,8 @@
-import illustration from "../assets/ratingApp/illustration.svg"
-export default function ThankYou({ submitted, active }) {
+import illustration from "../assets/ratingApp/illustration.svg";
+export default function ThankYou({ submitted, active, onclick }) {
   return (
     <div
+      onClick={onclick}
       className={`${
         submitted
           ? "flex flex-col w-full sm:w-4/5 md:w-3/5 lg:w-4/12 gap-6 px-8 py-10 bg-[#252d37] rounded-3xl text-center"

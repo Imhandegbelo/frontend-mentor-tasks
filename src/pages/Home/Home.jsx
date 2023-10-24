@@ -15,10 +15,6 @@ export default function Home() {
       path: "/rating_app",
     },
     {
-      title: "Todo",
-      path: "/todo",
-    },
-    {
       title: "TicTac Toe",
       path: "/tic_tac",
     },

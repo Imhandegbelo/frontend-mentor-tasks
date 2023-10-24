@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         poppins: ["poppins", "sans-serif"],
         Overpass: ["Overpass", "sans"],
+        Manrope: ["Manrope", "sans-serif"],
       },
       backgound: {
         pricing: "url(./src/assets/pricingApp/bg-pattern.svg)",

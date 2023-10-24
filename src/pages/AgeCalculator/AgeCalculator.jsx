@@ -93,7 +93,7 @@ function AgeCalculator() {
 
   return (
     <>
-      <div className="bg-[#dbdbdb] p-4 md:p-0 flex flex-col justify-center h-screen max-w-[1440px] mx-auto">
+      <div className="bg-gray-100 p-4 md:p-0 flex flex-col justify-center h-screen max-w-[1440px] mx-auto">
         <div className="w-full md:w-3/5 bg-white rounded-br-[9rem] mx-auto relative">
           <form
             className="p-5 sm:p-6 md:p-12"
@@ -113,7 +113,6 @@ function AgeCalculator() {
                 <input
                   type="text"
                   id="day"
-                  autoFocus
                   placeholder="DD"
                   value={day}
                   onChange={(e) => setDay(e.target.value)}

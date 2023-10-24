@@ -1,11 +1,12 @@
-import { lazy, useState } from "react";
 import { Routes, Route } from "react-router";
 import Home from "./pages/Home/Home";
 import AgeCalculator from "./pages/AgeCalculator/AgeCalculator";
 import PricingApp from "./pages/PricingApp/PricingApp";
 import RatingApp from "./pages/RatingApp/RatingApp";
-import TicTacToe from "./pages/TicTacToe";
-import Todo from "./pages/Todo";
+import TicTacToe from "./pages/TicTacToe/TicTacToe";
+import ComingSoon from "./pages/ComingSoon/ComingSoon";
+import NotFound from "./pages/NotFound/NotFound";
+
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route path="/pricing_app" element={<PricingApp />} />
         <Route path="/age_calculator" element={<AgeCalculator />} />
         <Route path="/tic_tac" element={<TicTacToe />} />
-        <Route path="/todo" element={<Todo />} />
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
     </div>
   );
