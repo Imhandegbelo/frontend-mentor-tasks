@@ -94,7 +94,7 @@ function AgeCalculator() {
   return (
     <>
       <div className="bg-gray-100 p-4 md:p-0 flex flex-col justify-center h-screen max-w-[1440px] mx-auto">
-        <div className="w-full md:w-3/5 bg-white rounded-br-[9rem] mx-auto relative">
+        <div className="w-full md:w-3/5 bg-white rounded-t-xl rounded-bl-xl rounded-br-[9rem] mx-auto relative">
           <form
             className="p-5 sm:p-6 md:p-12"
             action="#"

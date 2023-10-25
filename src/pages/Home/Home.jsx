@@ -15,6 +15,10 @@ export default function Home() {
       path: "/rating_app",
     },
     {
+      title: "NFT Preview",
+      path: "/nft_preview",
+    },
+    {
       title: "TicTac Toe",
       path: "/tic_tac",
     },
