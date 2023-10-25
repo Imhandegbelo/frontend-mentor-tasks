@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import Input from "../../component/Input";
-// import { errorMessage, useAgeCalculatorLogic } from "./age-calculator.hooks";
 import arrow from "../../assets/icon-arrow.svg";
 
 function AgeCalculator() {
@@ -120,7 +119,7 @@ function AgeCalculator() {
                     dayError ? "border-red-500" : ""
                   } rounded focus:border focus:border-rose-600`}
                 />
-                <small className="text-[8px] md:text-[10px] text-rose-400">
+                <small className="text-[8px] md:text-[10px] italic text-rose-400">
                   {dayErrorText}
                 </small>
               </div>
@@ -142,7 +141,7 @@ function AgeCalculator() {
                     monthError ? "border-red-500" : ""
                   } rounded invalid:border-rose-600`}
                 />
-                <small className="text-[8px] md:text-[10px] text-rose-400">
+                <small className="text-[8px] md:text-[10px] italic text-rose-400">
                   {monthErrorText}
                 </small>
               </div>
@@ -164,7 +163,7 @@ function AgeCalculator() {
                     yearError ? "border-red-500" : ""
                   } rounded invalid:border-rose-600`}
                 />
-                <small className="text-[8px] md:text-[10px] text-rose-400">
+                <small className="text-[8px] md:text-[10px] italic text-rose-400">
                   {yearErrorText}
                 </small>
               </div>
@@ -180,7 +179,7 @@ function AgeCalculator() {
               <img src={arrow} alt="arrow down" />
             </button>
           </form>
-          <div className="text-4xl md:text-5xl font-extrabold text-left p-6 md:p-12">
+          <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold italic text-left p-6 md:p-12">
             <h1 className="">
               <span className="text-purple-500">
                 {yearNum && !dayError && !monthError && !yearError
