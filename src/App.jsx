@@ -7,6 +7,7 @@ import TicTacToe from "./pages/TicTacToe/TicTacToe";
 import ComingSoon from "./pages/ComingSoon/ComingSoon";
 import NotFound from "./pages/NotFound/NotFound";
 import NFTComponent from "./pages/NFTpreviewComponent/NFTComponent";
+import InteractiveCard from "./pages/Interactive Card/InteractiveCard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/age_calculator" element={<AgeCalculator />} />
         <Route path="/tic_tac" element={<TicTacToe />} />
         <Route path="/nft_preview" element={<NFTComponent />} />
+        <Route path="/verify_card" element={<InteractiveCard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

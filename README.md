@@ -4,9 +4,9 @@ This is a repository housing some of my solutions to frontend mentor challenges 
 
 ## Table of contents
 
-- [Overview](#overview)
-- [My process](#my-process)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Age Calculator](./src/pages/AgeCalculator/)
+- [Pricing app](./src/pages/PricingApp/)
+- [Rating App](./src/pages/RatingApp/)
+- [NFT Preview component](./src/pages/NFTpreviewComponent/)
 
-To view all solutions click [here](https://www.https://frontend-mentor-tasks-henna.vercel.app/)
+To view all solutions click [here](https://www.frontend-mentor-tasks-henna.vercel.app/)

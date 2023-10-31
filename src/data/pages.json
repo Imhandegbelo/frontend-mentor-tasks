@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Age Calculator",
+    "path": "age_calculator"
+  },
+  {
+    "title": "Pricing App",
+    "path": "pricing_app"
+  },
+  {
+    "title": "Rating App",
+    "path": "rating_app"
+  },
+  {
+    "title": "NFT Preview",
+    "path": "nft_preview"
+  },
+  {
+    "title": "Interactive Card",
+    "path": "verify_card"
+  },
+  {
+    "title": "TicTac Toe",
+    "path": "tic_tac"
+  }
+]
