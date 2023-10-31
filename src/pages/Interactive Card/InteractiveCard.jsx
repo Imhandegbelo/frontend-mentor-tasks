@@ -31,7 +31,7 @@ export default function InteractiveCard() {
   };
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen font-Space+Grotesk">
       <div className="flex flex-col xl:flex-row items-center justify-center text-md">
         <div className="relative w-full h-[25rem] xl:w-1/3 bg-card-mobile xl:bg-card-desktop bg-cover xl:h-screen">
           <div className="absolute top-[20%] w-full h-fit left-[6vw] text-white">
