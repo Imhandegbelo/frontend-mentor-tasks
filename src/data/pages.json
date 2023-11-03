@@ -20,6 +20,10 @@
     "path": "verify_card"
   },
   {
+    "title": "Pricing  Grid",
+    "path": "pricing_grid"
+  },
+  {
     "title": "TicTac Toe",
     "path": "tic_tac"
   }

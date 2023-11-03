@@ -8,11 +8,12 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         Overpass: ["Overpass", "sans"],
         Manrope: ["Manrope", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
         "Space+Grotesk": ["Space Grotesk", "sans-serif"],
       },
       backgroundImage: {
         pricing: 'url("../src/assets/pricingApp/bg-pattern.svg")',
-        // "pr": 'url("../../assets/InteractiveCard/bg-main-desktop.png")',
+
         "card-desktop":
           'url("../src/assets/InteractiveCard/bg-main-desktop.png")',
         "card-mobile":
