@@ -2,67 +2,59 @@ import React, { useState } from "react";
 import Toggle from "../../component/PricingGrid/Toggle";
 import bg_top from "../../assets/pricingGrid/bg-top.svg";
 import bg_bottom from "../../assets/pricingGrid/bg-bottom.svg";
+import Card from "../../component/PricingGrid/Card";
+import data from "../../data/pricingGridData.json";
 
 export default function PricingGrid() {
   const [isChecked, setIsChecked] = useState(false);
 
-  // const data = [{title:"",price:"",description:[""],}]
   return (
-    <div className="flex bg-gray-50 justify-center h-screen w-screen">
+    <div className="relative flex justify-center bg-[#f5f5ff] justify-center font-Montserrat font-bold lg:h-screen w-screen overflow-clip">
       {/* Bg graphics starts */}
-      <img src={bg_top} alt="" className="absolute top-0 right-0" />
-      <img src={bg_bottom} alt="" className="absolute bottom-0 left-0" />
+      <img
+        src={bg_top}
+        alt=""
+        className="absolute -top-10 -right-[10rem] lg:top-0 lg:-right-10"
+      />
+      <img
+        src={bg_bottom}
+        alt=""
+        className="absolute -bottom-10 -left-10 lg:bottom-0 lg:left-0"
+      />
       {/* Bg graphics Ends */}
 
-      <div className="flex w-full max-w-[1440px] justify-center items-center border">
-        <div className="flex flex-col">
+      <div className="flex w-full max-w-[1440px] justify-center items-center z-50">
+        <div className="flex flex-col gap-10 lg:gap-16 xl:gap-36 w-full px-6 py-10 sm:px-10 sm:py-16">
           <div className="text-center">
-            <h1 className="text-gray-500 font-bold">Our Pricing</h1>
+            <h1 className="text-gray-500 pb-6 font-bold text-3xl">
+              Our Pricing
+            </h1>
             <Toggle
               onchange={() => setIsChecked(!isChecked)}
               ischecked={isChecked}
             />
           </div>
 
-          <div className="flex h-[400px] border ">
-            <Card />
-            <Card />
-            <Card />
-            {/* <div className=""></div>
-            <div className=""></div>
-            <div className=""></div> */}
+          <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row justify-center items-center w-full mx-auto h-[400pxc] h-fit shadow-2xlx z-50">
+            {data.map((single_data, index) => (
+              <Card
+                key={single_data.title}
+                data={single_data}
+                ischecked={isChecked}
+                className={`shadow-lg
+                  ${
+                    index === 0
+                      ? "rounded-xl lg:rounded-none lg:rounded-l-xl"
+                      : index === 2
+                      ? "rounded-xl lg:rounded-none lg:rounded-r-xl"
+                      : "rounded-xl lg:rounded-lg"
+                  }
+                `}
+              />
+            ))}
           </div>
         </div>
       </div>
     </div>
-  );
-}
- 
-function Card() {
-  return (
-    <div className="grid w-[30vh] text-center shadow-lg p-6 bg-white rounded-lg">
-      <h2 className="">Basic</h2>
-      <p className="">$666.34</p>
-      <div className="grid border-t p-2">
-        <p className="border-b">500 GB Storage</p>
-        <p className="border-b">2 Users Allowed</p>
-        <p className="border-b">Send up to 3 GB</p>
-      </div>
-      <Button isWhite={false} />
-    </div>
-  );
-}
-
-function Button(isWhite) {
-  return (
-    <button
-      className={`rounded-lg uppercase font-bold border border-white text-sm ${
-        isWhite == true
-          ? "bg-white text-[#696fdd] hover:border-[#696fdd]"
-          : "text-white bordcer-[#696fdd] bg-gradient-to-r from-[#a3a8f0] to-[#696fdd] hover:bg-none hover:border-[#696fdd] hover:transition-all hover:duration-800 hover:text-[#696fdd]"
-      } py-`}
-    >
-      Learn More
-    </button>
   );
 }

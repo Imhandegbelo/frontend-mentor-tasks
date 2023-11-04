@@ -11,9 +11,9 @@ export default function Toggle({ ischecked, onchange }) {
         Annually
       </span>
       <span
-        className={`mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200 ${
-          ischecked ? "bg-[#a5f3eb]" : "bg-[#eaeefb]"
-        }`}
+        className="mx-4 flex h-8 w-[60px] items-center rounded-full p-1 duration-200
+          bg-gradient-to-br from-[#a3a8f0] to-[#696fdd]
+        "
       >
         <span
           className={`h-6 w-6 rounded-full bg-white duration-200 ${
