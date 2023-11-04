@@ -23,7 +23,7 @@ export default function PricingGrid() {
       />
       {/* Bg graphics Ends */}
 
-      <div className="flex w-full max-w-[1440px] justify-center  z-50">
+      <div className="flex w-full max-w-[1440px] justify-center z-50">
         <div className="flex flex-col gap-10 lg:gap-16 w-full px-6 py-10 sm:px-10 sm:py-16 max-h-[60vh]">
           <div className="text-center">
             <h1 className="text-gray-500 pb-6 font-bold text-3xl">

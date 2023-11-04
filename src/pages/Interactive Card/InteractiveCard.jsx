@@ -22,8 +22,6 @@ export default function InteractiveCard() {
 
   const handleNumberChange = (e) => {
     let input = e.target.value;
-    // setCardNumber(e.target.value);
-    // let current = ""+=input;
     setCardNumber(splitCardNumber(input));
 
     let formattedInput = input.replace(/\s/g, "").replace(/(\d{4})/g, "$1 ");

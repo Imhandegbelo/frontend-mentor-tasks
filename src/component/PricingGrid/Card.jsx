@@ -4,7 +4,7 @@ export default function Card({ data, className, ischecked }) {
       className={`${className} z-50 flex items-center w-full lg:w-[25vw] text-center p-6 ${
         data.isWhite === true
           ? "bg-white h-[30rem] text-[#4a4d5e]"
-          : "h-[30rem] lg:h-[32rem] bg-gradient-to-br from-[#a3a8f0] to-[#696fdd] text-white"
+          : "h-[28rem] lg:h-[32rem] bg-gradient-to-br from-[#a3a8f0] to-[#696fdd] text-white"
       } `}
     >
       <div className="flex flex-col gap-6 w-full">
