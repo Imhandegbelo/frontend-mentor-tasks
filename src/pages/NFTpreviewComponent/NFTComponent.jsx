@@ -30,7 +30,7 @@ export default function NFTComponent() {
           Equilibrium #3429
         </h1>
         <div className="mb-4 pb-4 border-b border-[#2f415b]">
-          <p className="text-md leading-5 text-[#8bacda] py-3">
+          <p className="text-md leading-5 text-[#8bacda] py-5">
             Our Equilibrium collection promotes balance and calm.
           </p>
           <div className="flex justify-between">
