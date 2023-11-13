@@ -24,6 +24,14 @@
     "path": "pricing_grid"
   },
   {
+    "title": "Social Media Dashboard",
+    "path": "social_media"
+  },
+  {
+    "title": "Project Tracking",
+    "path": "project_tracking"
+  },
+  {
     "title": "TicTac Toe",
     "path": "tic_tac"
   }

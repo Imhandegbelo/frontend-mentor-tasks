@@ -2,7 +2,9 @@ import ageCalc from "../assets/Designs/ageCalculator.jpg"
 import rating from "../assets/Designs/ratingApp.jpg";
 import nft from "../assets/Designs/nft.jpg";
 import card from "../assets/Designs/cardDetails.jpg";
-import pricing_grid from "../assets/Designs/cardDetails.jpg";
+import pricing_grid from "../assets/Designs/pricingGrid.jpg";
+import social_media from "../assets/Designs/socialMediaDashboard.jpg";
+import project_tracking from "../assets/Designs/projectTracking.jpg";
 
 export default [
   {
@@ -39,5 +41,19 @@ export default [
     "description": "Some enriching text",
     "url": "/pricing_grid",
     "image": pricing_grid
+  },
+  {
+    "id":"social_media",
+    "title": "Social Media Dashboad",
+    "description": "Some enriching text",
+    "url": "/social_media",
+    "image": social_media
+  },
+  {
+    "id":"project_tracking",
+    "title": "Project Tracking",
+    "description": "Some enriching text",
+    "url": "/project_tracking",
+    "image": project_tracking
   },
 ]
