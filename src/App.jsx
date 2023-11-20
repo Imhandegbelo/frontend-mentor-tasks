@@ -11,6 +11,8 @@ import InteractiveCard from "./pages/Interactive Card/InteractiveCard";
 import PricingGrid from "./pages/PricingGrid/PricingGrid";
 import ProjectTracking from "./pages/ProjectTracking/ProjectTracking";
 import SocialMediaDash from "./pages/SocialMediaDashboard/SocialMediaDash";
+import Newsletter from "./pages/Newsletter/Newsletter";
+import Bootcamp from "./pages/Bootcamp/Bootcamp";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/pricing_grid" element={<PricingGrid />} />
         <Route path="/project_tracking" element={<ProjectTracking />} />
         <Route path="/social_media" element={<SocialMediaDash />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/bootcamp" element={<Bootcamp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

@@ -5,6 +5,8 @@ import card from "../assets/Designs/cardDetails.jpg";
 import pricing_grid from "../assets/Designs/pricingGrid.jpg";
 import social_media from "../assets/Designs/socialMediaDashboard.jpg";
 import project_tracking from "../assets/Designs/projectTracking.jpg";
+import newsletter from "../assets/Designs/newsletter.jpg";
+import bootcamp from "../assets/Designs/codingBootcamp.jpg";
 
 export default [
   {
@@ -55,5 +57,19 @@ export default [
     "description": "Some enriching text",
     "url": "/project_tracking",
     "image": project_tracking
+  },
+  {
+    "id":"newsletter",
+    "title": "Newsletter",
+    "description": "Some enriching text",
+    "url": "/newsletter",
+    "image": newsletter
+  },
+  {
+    "id":"coding_bootcamp",
+    "title": "Coding Bootcamp",
+    "description": "Some enriching text",
+    "url": "/bootcamp",
+    "image": bootcamp
   },
 ]

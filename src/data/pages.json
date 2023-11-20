@@ -32,6 +32,14 @@
     "path": "project_tracking"
   },
   {
+    "title": "Newsletter",
+    "path": "newsletter"
+  },
+  {
+    "title": "Coding Bootcamp",
+    "path": "coding_bootcamp"
+  },
+  {
     "title": "TicTac Toe",
     "path": "tic_tac"
   }
