@@ -14,50 +14,90 @@ export default function InteractiveCard() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const [cardNumber, setCardNumber] = useState("");
+  const [cardError, setCardError] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
+  const [MMYYError, setMMYYError] = useState("");
   const [cvc, setCvc] = useState("");
   const [cvcError, setCvcError] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleNumberChange = (e) => {
-    let input = e.target.value;
-    setCardNumber(splitCardNumber(input));
-
-    let formattedInput = input.replace(/\s/g, "").replace(/(\d{4})/g, "$1 ");
+    setCardNumber(splitCardNumber(e.target.value));
   };
 
   const splitCardNumber = (cardNumber) => {
     let closeSpace = cardNumber?.match?.(/\d+/gi)?.join?.("");
     let numArr = closeSpace?.match?.(/.{1,4}/g);
-    console.log(numArr);
     return numArr?.join?.(" ") ?? "";
+  };
+
+  const reset = () => {
+    setName("");
+    setCardNumber("");
+    setCvc("");
+    setYear("");
+    setMonth("");
+    setSubmitted(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    {
-      name.trim() == "" ? setNameError("Can't be blank") : setNameError("");
-      cvc.trim() == ""
-        ? setCvcError("Cant't be blank")
-        : /^\d+$/.test(cvc)
-        ? setCvcError("")
-        : setCvcError("Only digits allowed");
-    }
-    if (nameError !== "" || cvcError !== "") {
+    const card_string = cardNumber.split(" ").join("");
+
+    //   if (
+    //     nameError !== "" ||
+    //     cvcError !== "" ||
+    //     cardError !== ""
+    //     // MMYYError !== ""
+    //   ) {
+    //     return;
+    //   }
+
+    // Name
+    if (name.trim() == "") {
+      setNameError("Can't be blank");
       return;
-    } else setSubmitted(!submitted);
-    // if (name.trim() == "") {
-    //   setNameError("Name cannot be blank");
-    //   return;
-    // }
-    // if (cvc.trim() == "") {
-    //   setCvcError("Cant't be blank");
-    //   return;
-    // } else if (numOnly.test(cvc)) {
-    //   setCvcError("Only digits allowed");
-    //   return;
-    // }
+    } else if (!/^[A-Za-z]{2,}\s[A-Za-z]{2,}$/.test(name)) {
+      setNameError("Enter first name and last name");
+      return;
+    } else setNameError("");
+    // CardNumber
+    if (card_string.length < 16) {
+      setCardError("Incomplete or empty card number");
+      return;
+    } else if (Number("9999999999999999") < Number(card_string)) {
+      setCardError("Card number greater than 16 digits");
+      return;
+    } else setCardError("");
+    // Cvc
+    if (cvc.trim() === "") {
+      setCvcError("Can't be blank");
+      return;
+    } else if (!/^\d+$/.test(cvc)) {
+      setCvcError("Only digits allowed");
+      return;
+    } else if (!/^\d{3}$/.test(cvc)) {
+      setCvcError("Must be 3 digits");
+    } else {
+      setCvcError("");
+    }
+    // Month and Year
+    if (
+      !/^\d+$/.test(month) ||
+      !/^\d+$/.test(year) ||
+      Number(month) < 1 ||
+      Number(month) > 12 ||
+      Number(year) < 23 ||
+      Number(year) > 35
+    ) {
+      setMMYYError("Invalid dates");
+      return;
+    } else {
+      setMMYYError("");
+    }
+
+    setSubmitted(true);
   };
 
   return (
@@ -90,7 +130,7 @@ export default function InteractiveCard() {
                 label="card number"
                 placeholder="e.g 1234 5678 9123 0000"
                 name="card_number"
-                error=""
+                error={cardError}
                 value={cardNumber}
                 onchange={handleNumberChange}
               />
@@ -102,7 +142,7 @@ export default function InteractiveCard() {
                       label=""
                       placeholder="MM"
                       name="month"
-                      error=""
+                      error={MMYYError}
                       value={month}
                       onchange={(e) => setMonth(e.target.value)}
                     />
@@ -145,7 +185,7 @@ export default function InteractiveCard() {
               <p className="mx-auto text-gray-500">
                 We've added your card detail
               </p>
-              <Button onclick={setSubmitted(false)} text="Continue" />
+              <Button onclick={reset} text="Continue" />
             </div>
           )}
         </div>
