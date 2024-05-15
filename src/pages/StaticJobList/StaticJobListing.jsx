@@ -4,6 +4,11 @@ import JobListSection from "../../component/JobList/JobListSection";
 import FilterCard from "../../component/JobList/FilterCard";
 
 export default function StaticJobListing() {
+
+  {
+    document.title = "Frontend Mentor | Static Job List";
+  }
+
   const [tagList, setTagList] = useState([]);
   const [data, setData] = useState(job_data);
 
