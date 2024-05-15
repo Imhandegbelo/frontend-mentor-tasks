@@ -42,5 +42,13 @@
   {
     "title": "TicTac Toe",
     "path": "tic_tac"
+  },
+  {
+    "title": "Static Job Listing",
+    "path": "job_listings"
+  },
+  {
+    "title": "IP Tracker",
+    "path": "ip_tracker"
   }
 ]

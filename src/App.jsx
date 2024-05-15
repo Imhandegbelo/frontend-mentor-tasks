@@ -13,6 +13,8 @@ import ProjectTracking from "./pages/ProjectTracking/ProjectTracking";
 import SocialMediaDash from "./pages/SocialMediaDashboard/SocialMediaDash";
 import Newsletter from "./pages/Newsletter/Newsletter";
 import Bootcamp from "./pages/Bootcamp/Bootcamp";
+import IPTracker from "./pages/IPTracker/IPTracker";
+import StaticJobListing from "./pages/StaticJobList/StaticJobListing";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <Route path="/social_media" element={<SocialMediaDash />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/bootcamp" element={<Bootcamp />} />
+        <Route path="/ip_tracker" element={<IPTracker />} />
+        <Route path="/job_listings" element={<StaticJobListing />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

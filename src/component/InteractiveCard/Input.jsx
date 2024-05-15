@@ -19,6 +19,7 @@ export default function Input({
         required
         type="text"
         name={name}
+        pattern=""
         placeholder={placeholder}
         value={value}
         onChange={onchange}

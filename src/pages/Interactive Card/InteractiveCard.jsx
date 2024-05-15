@@ -45,15 +45,6 @@ export default function InteractiveCard() {
     e.preventDefault();
     const card_string = cardNumber.split(" ").join("");
 
-    //   if (
-    //     nameError !== "" ||
-    //     cvcError !== "" ||
-    //     cardError !== ""
-    //     // MMYYError !== ""
-    //   ) {
-    //     return;
-    //   }
-
     // Name
     if (name.trim() == "") {
       setNameError("Can't be blank");
@@ -64,7 +55,7 @@ export default function InteractiveCard() {
     } else setNameError("");
     // CardNumber
     if (card_string.length < 16) {
-      setCardError("Incomplete or empty card number");
+      setCardError("Invalid card number");
       return;
     } else if (Number("9999999999999999") < Number(card_string)) {
       setCardError("Card number greater than 16 digits");
@@ -89,7 +80,9 @@ export default function InteractiveCard() {
       Number(month) < 1 ||
       Number(month) > 12 ||
       Number(year) < 23 ||
-      Number(year) > 35
+      Number(year) > 35 ||
+      Number(month) < new Date().getMonth() + 1
+      // Number(year)
     ) {
       setMMYYError("Invalid dates");
       return;
