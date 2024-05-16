@@ -4,7 +4,6 @@ import JobListSection from "../../component/JobList/JobListSection";
 import FilterCard from "../../component/JobList/FilterCard";
 
 export default function StaticJobListing() {
-
   {
     document.title = "Frontend Mentor | Static Job List";
   }
@@ -12,22 +11,21 @@ export default function StaticJobListing() {
   const [tagList, setTagList] = useState([]);
   const [data, setData] = useState(job_data);
 
+  const isSubset = (subArray, mainArray) =>
+    subArray.every((el) => mainArray.includes(el));
+
   // if taglist is not empty
-  // return jobs where job.language U job.tools includes tag
+  // return jobs where tagList is a subset
   const updateJobList = () => {
     if (tagList.length > 0) {
       let newTagList = [];
 
-      // checks if each tag in exist in job languages or tools and updates newTagList
-      for (let i = 0; i < tagList.length; i++) {
-        for (let j = 0; j < job_data.length; j++) {
-          let checklist = job_data[j].languages.concat(job_data[j].tools);
+      for (let i = 0; i < job_data.length; i++) {
+        const checklist = job_data[i].languages.concat(job_data[i].tools);
+        checklist.push(job_data[i].level, job_data[i].role);
 
-          checklist.push(job_data[j].level, job_data[j].role);
-
-          if (checklist.includes(tagList[i])) {
-            newTagList.push(job_data[j]);
-          }
+        if (isSubset(tagList, checklist)) {
+          newTagList.push(job_data[i]);
         }
       }
 
@@ -48,7 +46,7 @@ export default function StaticJobListing() {
   };
 
   const removeTag = (tag) => {
-    // Use filter to return only elements that are not 'tag'
+    // Use filter to remove elements that are not 'tag'
     let newAr = tagList.filter((tech) => tech !== tag);
 
     setTagList(newAr);

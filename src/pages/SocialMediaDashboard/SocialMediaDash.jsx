@@ -11,7 +11,7 @@ export default function SocialMediaDash() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="flex justify-center w-screen xl:h-screen bg-white">
+    <div className="flex justify-center w-screen xl:h-screen/ bg-white">
       <div
         className={`w-full max-w-[1440px] ${
           darkMode ? "bg-[#1f2029]" : ""
