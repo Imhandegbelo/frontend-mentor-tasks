@@ -39,20 +39,20 @@ export default function Newsletter() {
     <div className="flex items-center justify-center w-screen bg-[#242742]">
       <div className="font-roboto flex items-center justify-center h-screen w-full max-w-[1440px] bg-[#242742]">
         {!submitted ? (
-          <div className="flex flex-col lg:flex-row bg-white h-screen w-screen md:h-fit md:w-[64%] md:rounded-3xl p-6 text-slate-900">
-            <div className="flex flex-col items-cennter gap-4 px-6 w-full">
-              <div className="my-10 md:my-auto">
-                <h1 className="font-bold text-4xl md:text-5xl">
+          <div className="flex flex-col lg:flex-row bg-white h-screen w-screen md:h-fit/ md:h-[59%] md:w-[64%]/ md:w-[42.6%] md:rounded-3xl p-2 py-3 text-slate-900">
+            <div className="flex flex-col items-cennter gap-8 px-6 w-full">
+              <div className="my-10 md:my-auto md:mx-2">
+                <h1 className="font-bold text-4xl md:text-3xl">
                   Stay updated!
                 </h1>
-                <p className="my-4 text-sm md:text-base">
+                <p className="my-2 text-xs md:text-xs">
                   Join 60,000+ product managers receiving monthly updates on:
                 </p>
-                <div className="grid gap-3">
+                <div className="grid gap-2">
                   {list.map((lk, index) => (
-                    <div key={index} className="flex md:items-center gap-3">
-                      <img src={icon_list} alt="list icon" />
-                      <p>{lk}</p>
+                    <div key={index} className="flex md:items-center gap-1">
+                      <img src={icon_list} alt="list icon" className="w-3" />
+                      <p className="text-[10px]">{lk}</p>
                     </div>
                   ))}
                 </div>
@@ -68,7 +68,7 @@ export default function Newsletter() {
               <img
                 src={illustration_desktop}
                 alt="bg"
-                className="hidden lg:block rounded-3xl w-full h-full"
+                className="hidden lg:block rounded-2xl w-full h-full"
               />
               <img
                 src={illustration_mobile}
