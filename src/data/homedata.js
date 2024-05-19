@@ -9,6 +9,7 @@ import newsletter from "../assets/Designs/newsletter.jpg";
 import bootcamp from "../assets/Designs/codingBootcamp.jpg";
 import ipTracker from "../assets/Designs/ipTracker.jpg";
 import staticJobList from "../assets/Designs/staticJobList.jpg";
+import shortly from "../assets/Designs/shortly.jpg"
 
 export default [
   {
@@ -80,6 +81,13 @@ export default [
     description: "Some enriching text",
     url: "/job_listings",
     image: staticJobList,
+  },
+  {
+    id: "shortly",
+    title: "URL Shortner",
+    description: "Some enriching text",
+    url: "/shortly",
+    image: shortly,
   },
   {
     id: "ip_tracker",
