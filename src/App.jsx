@@ -15,6 +15,7 @@ import Newsletter from "./pages/Newsletter/Newsletter";
 import Bootcamp from "./pages/Bootcamp/Bootcamp";
 import IPTracker from "./pages/IPTracker/IPTracker";
 import StaticJobListing from "./pages/StaticJobList/StaticJobListing";
+import Shortly from "./pages/Shortly";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
         <Route path="/bootcamp" element={<Bootcamp />} />
         <Route path="/ip_tracker" element={<IPTracker />} />
         <Route path="/job_listings" element={<StaticJobListing />} />
+        <Route path="/shortly" element={<Shortly />} />
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

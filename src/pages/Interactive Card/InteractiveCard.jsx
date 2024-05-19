@@ -94,9 +94,9 @@ export default function InteractiveCard() {
   };
 
   return (
-    <div className="h-screen w-screen font-Space+Grotesk">
+    <div className="h-screen lg:h-full w-screen font-Space+Grotesk">
       <div className="flex flex-col xl:flex-row items-center justify-center text-md">
-        <div className="relative w-full h-[18rem] sm:h-[22rem] xl:w-1/3 bg-card-mobile xl:bg-card-desktop bg-cover xl:h-screen">
+        <div className="relative w-full h-[18rem] sm:h-[22rem] xl:w-1/3 bg-card-mobile xl:bg-card-desktop bg-cover xl:h-[880px]">
           <div className="xl:absolute xl:top-[20%] w-[60%] mx-auto xl:w-full h-fit left-[6vw] text-white">
             <CardFront
               cardNumber={cardNumber}
